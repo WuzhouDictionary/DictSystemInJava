@@ -12,6 +12,7 @@ on:
   push:
     tags:
       - "v*.*.*"
+      - "V*.*.*"
 
 jobs:
   build:
