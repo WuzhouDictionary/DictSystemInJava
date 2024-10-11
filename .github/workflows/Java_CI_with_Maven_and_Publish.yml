@@ -37,7 +37,7 @@ jobs:
 
     - name: Change name
       run: |
-        cp "ManageSystemInJava-latest.jar" "ManageSystemInJava-${{github.github_sha}}.jar" 
+        cp "src/target/ManageSystemInJava-latest.jar" "ManageSystemInJava-${{github.github_sha}}.jar" 
 
     - name: create github release
       uses: softprops/action-gh-release@v2.0.8
