@@ -11,8 +11,7 @@ name: Java CI with Maven and Publish
 on:
   push:
     tags:
-      - v**
-      - V**
+      - "v*.*.*"
 
 jobs:
   build:
@@ -39,4 +38,6 @@ jobs:
       with:
         tag_name: ${{GITHUB_SHA}}
         name: ${{GITHUB_SHA}}
+        files: |
+          
     
