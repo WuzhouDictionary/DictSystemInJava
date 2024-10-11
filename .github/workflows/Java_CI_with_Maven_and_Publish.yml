@@ -15,9 +15,10 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
+      discussions: write
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 17
@@ -39,5 +40,5 @@ jobs:
         tag_name: ${{GITHUB_SHA}}
         name: ${{GITHUB_SHA}}
         files: |
-          
-    
+          "src/target/ManageSystemInJava*"
+        make_latest: true
