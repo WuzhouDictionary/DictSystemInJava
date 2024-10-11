@@ -6,7 +6,8 @@ public class SQLServer {
     private String username, password, databaseName, ip, port, connectionUrl;
     private Connection con;
 
-    public SQLServer(String ip, String port, String username, String password, String databaseName) throws SQLException {
+    public SQLServer(String ip, String port, String username, String password, String databaseName) throws SQLException, ClassNotFoundException {
+        Class.forName( "com.microsoft.sqlserver.jdbc.SQLServerDriver");
         this.username = username;
         this.password = password;
         this.databaseName = databaseName;
@@ -27,6 +28,8 @@ public class SQLServer {
         } catch (SQLException e) {
             System.out.println("连接数据库时发生错误！");
             System.out.println(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 }
