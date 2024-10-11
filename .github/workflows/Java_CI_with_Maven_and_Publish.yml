@@ -37,8 +37,8 @@ jobs:
     - name: create github release
       uses: softprops/action-gh-release@v2.0.8
       with:
-        tag_name: ${{GITHUB_SHA}}
-        name: ${{GITHUB_SHA}}
+        tag_name: ${{github.github_sha}}
+        name: ${{github.github_sha}}
         files: |
           "src/target/ManageSystemInJava*"
         make_latest: true
