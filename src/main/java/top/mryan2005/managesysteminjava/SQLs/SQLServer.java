@@ -1,7 +1,6 @@
-package top.mryan2005.managesysteminjava;
+package top.mryan2005.managesysteminjava.SQLs;
 
 import java.sql.*;
-import java.util.Properties;
 
 public class SQLServer {
     private String username, password, databaseName, ip, port, connectionUrl;
@@ -15,6 +14,10 @@ public class SQLServer {
         this.port = port;
         connectionUrl = "jdbc:sqlserver://"+ip+":"+port+";databaseName="+databaseName+";user="+username+";password="+password+";encrypt=false;";
         con = DriverManager.getConnection(connectionUrl);
+    }
+
+    public Connection getSQLer() {
+        return con;
     }
 
     public static void main(String args[]) throws SQLException {
