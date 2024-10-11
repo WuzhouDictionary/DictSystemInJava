@@ -34,11 +34,15 @@ jobs:
     - name: Update dependency graph
       uses: advanced-security/maven-dependency-submission-action@v4
 
+    - name: Change name
+      run: |
+        cp ManageSystemInJava-${{github.github_sha}}.jar ManageSystemInJava-latest
+
     - name: create github release
       uses: softprops/action-gh-release@v2.0.8
       with:
         tag_name: ${{github.github_sha}}
         name: ${{github.github_sha}}
         files: |
-          src/target/ManageSystemInJava-latest
+          src/target/ManageSystemInJava-${{github.github_sha}}.jar
         make_latest: true
