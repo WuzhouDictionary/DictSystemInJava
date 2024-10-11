@@ -30,7 +30,7 @@ jobs:
     - name: Submit Dependency Snapshot
       uses: advanced-security/maven-dependency-submission-action@v4
     - name: report status
-      runs: |
+      run: |
         curl -L \
             -X POST \
             -H "Accept: application/vnd.github+json" \
