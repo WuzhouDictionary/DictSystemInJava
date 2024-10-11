@@ -45,5 +45,5 @@ jobs:
         tag_name: ${{github.github_sha}}
         name: ${{github.github_sha}}
         files: |
-          "/home/runner/work/ManageSystemInJava/ManageSystemInJava/target/ManageSystemInJava-${{github.github_sha}}.jar"
+          /home/runner/work/ManageSystemInJava/ManageSystemInJava/target/ManageSystemInJava-${{github.github_sha}}.jar
         make_latest: true
