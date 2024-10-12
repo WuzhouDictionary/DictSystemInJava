@@ -1,5 +1,6 @@
 package top.mryan2005.managesysteminjava;
 
+import top.mryan2005.managesysteminjava.SQLs.MySQL;
 import top.mryan2005.managesysteminjava.SQLs.SQLServer;
 
 import java.sql.Connection;
@@ -10,9 +11,9 @@ public class SQLLinker {
     private String type;
     public SQLLinker(String type, String ip, String port, String username, String password, String databaseName) {
         this.type = type;
-        if(type == "SQL Server") {
+        if("SQL Server".matches(type)) {
             try {
-                SQLServer sql = new SQLServer("127.0.0.1", "1433", "sa", "A123456", "abc");
+                SQLServer sql = new SQLServer(ip, port, username, password, databaseName);
                 System.out.println("连接成功！");
                 con = sql.getSQLer();
             } catch (SQLException e) {
@@ -21,6 +22,8 @@ public class SQLLinker {
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
+        } else if("MySQL".matches(type)) {
+            MySQL sql = new MySQL(ip, port, username, password, databaseName);
         }
     }
 
