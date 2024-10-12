@@ -1,9 +1,11 @@
 package top.mryan2005.managesysteminjava;
 
+import com.alibaba.fastjson.JSONObject;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import top.mryan2005.managesysteminjava.Settings.readJSON;
 
 import java.io.IOException;
 
@@ -15,7 +17,9 @@ public class HelloApplication extends Application {
         stage.setTitle("梧典");
         stage.setScene(scene);
         stage.show();
-        SQLLinker sql = new SQLLinker("SQL Server" ,"127.0.0.1", "1433", "Mryan2005", "A123456", "abc");
+        readJSON readJSON = new readJSON("src/main/resources/config.json");
+        JSONObject config = readJSON.getJSONContent();
+        SQLLinker sql = new SQLLinker((String) config.get("SQLType"),(String) config.get("SQLIp"), (String) config.get("SQLPort"), (String) config.get("SQLUsername"), (String) config.get("SQLPassword"), (String) config.get("SQLDatabaseName"));
     }
 
     public static void main(String[] args) {
