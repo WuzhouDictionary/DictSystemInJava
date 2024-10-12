@@ -21,6 +21,7 @@ public class HelloApplication extends Application {
         readJSON readJSON = new readJSON("src/main/resources/config.json");
         JSONObject config = readJSON.getJSONContent();
         SQLLinker sql = new SQLLinker((String) config.get("SQLType"),(String) config.get("SQLServer"), (String) config.get("SQLPort"), (String) config.get("SQLUser"), (String) config.get("SQLPassword"), (String) config.get("SQLDatabase"));
+        SQLLinker sql1 = new SQLLinker((String) config.get("SQLType"),(String) config.get("SQLServer"), (String) config.get("SQLPort"), (String) config.get("SQLUser"), (String) config.get("SQLPassword"));
     }
 
     public static void main(String[] args) {

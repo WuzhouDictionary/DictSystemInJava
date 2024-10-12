@@ -15,7 +15,18 @@ public class MySQL {
         this.databaseName = databaseName;
         this.ip = ip;
         this.port = port;
-        String connectionUrl = "jdbc:mysql://"+ip+":"+port+"/"+databaseName+"?user="+username+"&password="+password+"&useUnicode=true&characterEncoding=UTF-8&useSSL=false";
+        String connectionUrl = "jdbc:mysql://"+ip+":"+port+"/"+databaseName+"?user="+username+"&password="+password+"&useUnicode=true&allowPublicKeyRetrieval=true&characterEncoding=UTF-8&useSSL=false";
+        con = getConnection(connectionUrl);
+    }
+
+    public MySQL(String ip, String port, String username, String password) throws ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        this.username = username;
+        this.password = password;
+        this.databaseName = null;
+        this.ip = ip;
+        this.port = port;
+        String connectionUrl = "jdbc:mysql://"+ip+":"+port+"?user="+username+"&password="+password+"&useUnicode=true&allowPublicKeyRetrieval=true&characterEncoding=UTF-8&useSSL=false";
         con = getConnection(connectionUrl);
     }
 
@@ -25,7 +36,7 @@ public class MySQL {
 
     public static void main(String args[]) throws SQLException, ClassNotFoundException {
         try {
-            MySQL sql = new MySQL("100.67.158.142", "336", "root", "123456", "root");
+            MySQL sql = new MySQL("100.67.158.142", "336", "root", "123456");
         } catch (SQLException e) {
             System.out.println("连接数据库时发生错误！");
             System.out.println(e);

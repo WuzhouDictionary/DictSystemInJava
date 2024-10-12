@@ -34,6 +34,31 @@ public class SQLLinker {
         }
     }
 
+    public SQLLinker(String type, String ip, String port, String username, String password) throws SQLException, ClassNotFoundException {
+        this.type = type;
+        if("SQL Server".matches(type)) {
+            try {
+                SQLServer sql = new SQLServer(ip, port, username, password);
+                System.out.println("连接成功！");
+                con = sql.getSQLer();
+            } catch (SQLException e) {
+                System.out.println("连接数据库时发生错误！");
+                System.out.println(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        } else if("MySQL".matches(type)) {
+            try {
+                MySQL sql = new MySQL(ip, port, username, password);
+            } catch (SQLException e) {
+                System.out.println("连接数据库时发生错误！");
+                System.out.println(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
     public void addEntry() {
         if(this.type == "SQL Server") {
             try {
