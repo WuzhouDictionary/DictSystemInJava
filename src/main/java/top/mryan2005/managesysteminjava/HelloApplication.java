@@ -17,9 +17,9 @@ public class HelloApplication extends Application {
         stage.setTitle("梧典");
         stage.setScene(scene);
         stage.show();
-        readJSON readJSON = new readJSON("./configs/config.json");
+        readJSON readJSON = new readJSON("src/main/resources/config.json");
         JSONObject config = readJSON.getJSONContent();
-        SQLLinker sql = new SQLLinker((String) config.get("SQLType"),(String) config.get("SQLIp"), (String) config.get("SQLPort"), (String) config.get("SQLUsername"), (String) config.get("SQLPassword"), (String) config.get("SQLDatabaseName"));
+        SQLLinker sql = new SQLLinker((String) config.get("SQLType"),(String) config.get("SQLServer"), (String) config.get("SQLPort"), (String) config.get("SQLUser"), (String) config.get("SQLPassword"), (String) config.get("SQLDatabase"));
     }
 
     public static void main(String[] args) {
