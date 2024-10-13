@@ -50,12 +50,21 @@ public class SQLLinker {
         } else if("MySQL".matches(type)) {
             try {
                 MySQL sql = new MySQL(ip, port, username, password);
+                con = sql.getSQLer();
             } catch (SQLException e) {
                 System.out.println("连接数据库时发生错误！");
                 System.out.println(e);
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
+        }
+    }
+
+    public boolean testConnection() {
+        if(this.con != null) {
+            return true;
+        } else {
+            return false;
         }
     }
 
