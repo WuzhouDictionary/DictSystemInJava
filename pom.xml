@@ -23,7 +23,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <junit.version>5.10.0</junit.version>
+        <junit.version>5.11.2</junit.version>
         <start-class>top.mryan2005.managesysteminjava.JavaFXBootstrap</start-class>
     </properties>
 
@@ -57,7 +57,7 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>21</version>
+            <version>24-ea+5</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -72,7 +72,7 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-swing</artifactId>
-            <version>21</version>
+            <version>24-ea+5</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -98,7 +98,7 @@
         <dependency>
             <groupId>net.synedra</groupId>
             <artifactId>validatorfx</artifactId>
-            <version>0.4.0</version>
+            <version>0.5.1</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.openjfx</groupId>
@@ -130,7 +130,7 @@
         <dependency>
             <groupId>com.github.almasb</groupId>
             <artifactId>fxgl</artifactId>
-            <version>17.3</version>
+            <version>21.1</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.openjfx</groupId>
