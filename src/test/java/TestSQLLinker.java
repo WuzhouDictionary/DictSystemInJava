@@ -5,7 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 public class TestSQLLinker {
     @Test
-    public void testMySQLLinker() {
+    public void testMethodOne() {
         MySQL sql = new MySQL();
         assertTrue(sql.testConnection("127.0.0.1", "3307", "root", "123456", "testDatabase"));
     }
