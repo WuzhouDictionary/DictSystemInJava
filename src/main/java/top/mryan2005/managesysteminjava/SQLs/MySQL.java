@@ -37,7 +37,7 @@ public class MySQL {
         return con;
     }
 
-    public static boolean testConnection(String ip, String port, String username, String password, String databaseName) {
+    public boolean testConnection(String ip, String port, String username, String password, String databaseName) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String connectionUrl = "jdbc:mysql://"+ip+":"+port+"?user="+username+"&password="+password+"&useUnicode=true&allowPublicKeyRetrieval=true&characterEncoding=UTF-8&useSSL=false";
