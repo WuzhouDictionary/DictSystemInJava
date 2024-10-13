@@ -15,7 +15,7 @@ public class SQLLinker {
             try {
                 SQLServer sql = new SQLServer(ip, port, username, password, databaseName);
                 System.out.println("连接成功！");
-                con = sql.getSQLer();
+                this.con = sql.getSQLer();
             } catch (SQLException e) {
                 System.out.println("连接数据库时发生错误！");
                 System.out.println(e);
@@ -25,6 +25,7 @@ public class SQLLinker {
         } else if("MySQL".matches(type)) {
             try {
                 MySQL sql = new MySQL(ip, port, username, password, databaseName);
+                this.con = sql.getSQLer();
             } catch (SQLException e) {
                 System.out.println("连接数据库时发生错误！");
                 System.out.println(e);
