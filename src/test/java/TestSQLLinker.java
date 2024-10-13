@@ -1,5 +1,3 @@
-package top.mryan2005.managesysteminjava;
-
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
