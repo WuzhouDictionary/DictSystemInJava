@@ -1,12 +1,13 @@
 package top.mryan2005.managesysteminjava;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
 import top.mryan2005.managesysteminjava.SQLs.MySQL;
 
 public class TestSQLLinker {
     @Test
     public void testMySQLLinker() {
-        assertEquals(true, MySQL.testConnection("127.0.0.1", "3307", "root", "123456", "testDatabase"));
+        assertTrue(MySQL.testConnection("127.0.0.1", "3307", "root", "123456", "testDatabase"));
     }
 }
