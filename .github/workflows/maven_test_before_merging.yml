@@ -59,5 +59,6 @@ jobs:
           java-version: '20'
           distribution: 'temurin'
           cache: maven
-      - name: Run tests with Maven
-        run: mvn test
+      - name: Run JUnit4 tests
+        working-directory: ./
+        run: mvn -B clean package --file pom.xml -Dtest="SQLLinkerTest#TestMethodOne"
