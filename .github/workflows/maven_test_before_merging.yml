@@ -61,4 +61,4 @@ jobs:
           cache: maven
       - name: Run JUnit4 tests
         working-directory: ./
-        run: mvn -B clean package --file pom.xml -Dtest="SQLLinkerTest#TestMethodOne"
+        run: mvn -B test

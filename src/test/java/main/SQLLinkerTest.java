@@ -1,6 +1,7 @@
 package main;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+
 import top.mryan2005.managesysteminjava.SQLs.MySQL;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
