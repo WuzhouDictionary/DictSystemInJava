@@ -11,6 +11,6 @@ public class SQLLinkerTest {
     @Test
     public void TestMethodOne() {
         MySQL sql = new MySQL();
-        assertTrue(sql.testConnection("127.0.0.1", "3307", "root", "123456", "testDatabase"));
+        assertTrue(sql.testConnection("127.0.0.1", "3800", "root", "123456", "testDatabase"));
     }
 }
