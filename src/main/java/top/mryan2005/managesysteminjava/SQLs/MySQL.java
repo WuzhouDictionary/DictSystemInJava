@@ -19,6 +19,9 @@ public class MySQL {
         con = getConnection(connectionUrl);
     }
 
+    public MySQL() {
+    }
+
     public MySQL(String ip, String port, String username, String password) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         this.username = username;
@@ -32,6 +35,19 @@ public class MySQL {
 
     public Connection getSQLer() {
         return con;
+    }
+
+    public static boolean testConnection(String ip, String port, String username, String password, String databaseName) {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String connectionUrl = "jdbc:mysql://"+ip+":"+port+"?user="+username+"&password="+password+"&useUnicode=true&allowPublicKeyRetrieval=true&characterEncoding=UTF-8&useSSL=false";
+            getConnection(connectionUrl);
+            return true;
+        } catch (SQLException e) {
+            return false;
+        } catch (ClassNotFoundException e) {
+            return false;
+        }
     }
 
     public static void main(String args[]) throws SQLException, ClassNotFoundException {
