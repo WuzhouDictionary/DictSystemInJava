@@ -11,12 +11,12 @@ public class SQLLinkerTest {
     public SQLLinker mysql;
     @Test
     public void TestConnectSQL() throws SQLException, ClassNotFoundException {
-        this.mysql = new SQLLinker("MySQL", "127.0.0.1", "3800", "root", "123456", "testDatabase");
+        mysql = new SQLLinker("MySQL", "127.0.0.1", "3800", "root", "123456", "testDatabase");
         assertTrue(mysql.testConnection());
     }
 
     @Test
     public void TestCloseConnect() throws SQLException, ClassNotFoundException {
-        assertTrue(this.mysql.closeConnection());
+        assertTrue(mysql.closeConnection());
     }
 }
