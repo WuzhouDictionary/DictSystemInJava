@@ -81,6 +81,6 @@ public class SQLLinker {
 
     public boolean closeConnection() throws SQLException {
         con.close();
-        return false;
+        return true;
     }
 }
