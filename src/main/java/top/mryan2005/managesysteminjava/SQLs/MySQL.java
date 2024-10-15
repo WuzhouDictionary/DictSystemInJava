@@ -60,4 +60,8 @@ public class MySQL {
             throw new RuntimeException(e);
         }
     }
+
+    public boolean insert(String tableName, String[] columns, String[] values) {
+        return false;
+    }
 }
