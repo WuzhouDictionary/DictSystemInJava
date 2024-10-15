@@ -85,7 +85,7 @@
         <dependency>
             <groupId>org.controlsfx</groupId>
             <artifactId>controlsfx</artifactId>
-            <version>11.1.2</version>
+            <version>11.2.1</version>
         </dependency>
         <dependency>
             <groupId>com.dlsc.formsfx</groupId>
