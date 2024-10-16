@@ -8,11 +8,12 @@ import javafx.stage.Stage;
 import top.mryan2005.managesysteminjava.Settings.readJSON;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class HelloApplication extends Application {
     @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+    public void start(Stage stage) throws IOException, SQLException, ClassNotFoundException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("main.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         stage.setTitle("梧典");
         stage.setScene(scene);
@@ -20,6 +21,7 @@ public class HelloApplication extends Application {
         readJSON readJSON = new readJSON("src/main/resources/config.json");
         JSONObject config = readJSON.getJSONContent();
         SQLLinker sql = new SQLLinker((String) config.get("SQLType"),(String) config.get("SQLServer"), (String) config.get("SQLPort"), (String) config.get("SQLUser"), (String) config.get("SQLPassword"), (String) config.get("SQLDatabase"));
+        SQLLinker sql1 = new SQLLinker((String) config.get("SQLType"),(String) config.get("SQLServer"), (String) config.get("SQLPort"), (String) config.get("SQLUser"), (String) config.get("SQLPassword"));
     }
 
     public static void main(String[] args) {

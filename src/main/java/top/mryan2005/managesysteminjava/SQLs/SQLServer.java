@@ -17,6 +17,17 @@ public class SQLServer {
         con = DriverManager.getConnection(connectionUrl);
     }
 
+    public SQLServer(String ip, String port, String username, String password) throws SQLException, ClassNotFoundException {
+        Class.forName( "com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        this.username = username;
+        this.password = password;
+        this.databaseName = null;
+        this.ip = ip;
+        this.port = port;
+        connectionUrl = "jdbc:sqlserver://"+ip+":"+port+";"+";user="+username+";password="+password+";encrypt=false;";
+        con = DriverManager.getConnection(connectionUrl);
+    }
+
     public Connection getSQLer() {
         return con;
     }
