@@ -64,4 +64,7 @@ public class MySQL {
     public boolean insert(String tableName, String[] columns, String[] values) {
         return false;
     }
+
+    public void FindSomeThings(String query) throws SQLException {
+    }
 }
